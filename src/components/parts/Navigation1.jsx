@@ -37,10 +37,10 @@ class Navigation1 extends Component {
       <nav
       id="navigation-1"
       className='navigation-1'>
-        <Link to="/" target="_self">
+        <a href="https://remotereq.com" target="_self">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <img src={ RRLogo } className='rr-logo' alt=""/>
-        </Link>
+        </a>
 
         <div
           className="hamburger-menu-icon"
