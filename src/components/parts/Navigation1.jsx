@@ -69,7 +69,7 @@ class Navigation1 extends Component {
         </div>
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
-          <a href='https://remotereq.com/hire-talent'>
+          <a href='https://remotereq.com/find-talent'>
             <button className='button-2'>hire talent</button>
           </a>
 

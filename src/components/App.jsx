@@ -53,7 +53,7 @@ class App extends Component {
           <div className={`${IN_DEV_MODE === 'development' ? 'dev-mode' : ''}`}>
             <Navigation/>
               <Switch>
-                <Route exact path="/sign-in" component={ESignIn}/>
+                <Route exact path="/" component={ESignIn}/>
                 <Route path="/sign-up" component={ESignUp} />
                 <Route path="/employerEmailVerify" component={EVerify} />
                 <Route path="/settings" component={ESettings}/>
