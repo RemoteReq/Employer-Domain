@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router, Switch, Route,
+  BrowserRouter as Router, Switch, Route, Redirect,
 } from 'react-router-dom';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 
@@ -53,7 +53,10 @@ class App extends Component {
           <div className={`${IN_DEV_MODE === 'development' ? 'dev-mode' : ''}`}>
             <Navigation/>
               <Switch>
-                <Route exact path="/" component={ESignIn}/>
+                <Route exact path="/">
+                  <Redirect to="/sign-in" />
+                </Route>
+                <Route path="/sign-in" component={ESignIn}/>
                 <Route path="/sign-up" component={ESignUp} />
                 <Route path="/employerEmailVerify" component={EVerify} />
                 <Route path="/settings" component={ESettings}/>
