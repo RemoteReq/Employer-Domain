@@ -51,18 +51,17 @@ class Navigation1 extends Component {
         </div>
 
         <div className="navigation-1-links">
-          <Link to="/find-talent">
+         <a href='https://remotereq.com/hire-talent'>
             <button className='button-2'>hire talent</button>
-          </Link>
+          </a>
 
-          <Link to='/sign-in'>
+          <a href='https://remotereq.com/sign-in'>
             <button className='button-2'>find jobs</button>
-          </Link>
+          </a>
 
-
-          <Link to="/request-a-demo">
+          <a href='https://remotereq.com/request-a-demo'>
             <button className='button-1'>request a demo</button>
-          </Link>
+          </a>
 
           <a href="https://blog.remotereq.com">
             <button className="e-button-2">Blog</button>
@@ -70,17 +69,17 @@ class Navigation1 extends Component {
         </div>
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
-          <Link to="/find-talent">
+          <a href='https://remotereq.com/hire-talent'>
             <button className='button-2'>hire talent</button>
-          </Link>
+          </a>
 
-          <Link to='/sign-in'>
+          <a href='https://remotereq.com/sign-in'>
             <button className='button-2'>find jobs</button>
-          </Link>
+          </a>
 
-          <Link to="/request-a-demo">
+          <a href='https://remotereq.com/request-a-demo'>
             <button className='button-1'>request a demo</button>
-          </Link>
+          </a>
         </div>
 
     </nav>

@@ -304,7 +304,7 @@ class JobForm extends Component {
       })
       .then((status) => {
         if (status === 200) {
-          window.location = '/employer/dashboard';
+          window.location = '/dashboard';
         } else {
           console.log('fields are missing answers!');
         }

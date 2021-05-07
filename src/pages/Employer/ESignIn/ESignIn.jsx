@@ -160,11 +160,11 @@ class ESignIn extends Component {
           </p>
 
           <p className="small-paragraph">
-            Don&apos;t have an account? <Link to="/employer/sign-up" className="small-link">Sign Up</Link>
+            Don&apos;t have an account? <Link to="/sign-up" className="small-link">Sign Up</Link>
           </p>
 
           <p className="small-paragraph">
-            <Link to="/employer/forgot-password">Forgot your password?</Link>
+            <Link to="/forgot-password">Forgot your password?</Link>
           </p>
 
         </form>

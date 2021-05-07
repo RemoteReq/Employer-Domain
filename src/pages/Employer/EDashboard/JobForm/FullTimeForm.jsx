@@ -216,7 +216,7 @@ const FullTimeForm = ({
       </div>
 
       <div className="form-handler">
-        <Link to="/employer/firstPayment">
+        <Link to="/firstPayment">
           <button
             className="button-1"
             onClick={addJob}

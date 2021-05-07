@@ -33,10 +33,10 @@ const MatchWindow = ({ firstPaymentStatus, matches, job }) => {
                   <div className="obfuscate-previews">
                     <Link
                       to={{
-                        pathname: '/employer/firstPayment',
+                        pathname: '/firstPayment',
                         state: {
                           jobId: job._id,
-                          price: 100.00,
+                          // price: 100.00,
                         },
                       }}
                       >

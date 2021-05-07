@@ -85,7 +85,7 @@ class JobViewer extends Component {
         .then((response) => {
           console.log(response);
 
-          window.location = '/employer/dashboard';
+          window.location = '/dashboard';
         })
         .catch((error) => {
           console.error(error);
@@ -254,7 +254,7 @@ class JobViewer extends Component {
             <div>
               <Link
                 to={{
-                  pathname: '/employer/gig-select-2',
+                  pathname: '/gig-select-2',
                   state: { job, edit: true },
                 }}
                 ><button className="small-button button-1">

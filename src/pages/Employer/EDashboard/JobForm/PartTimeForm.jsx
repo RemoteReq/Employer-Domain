@@ -233,7 +233,7 @@ const PartTimeForm = ({
               <Preloader color="white" />
             </div>
 
-            <Link to="/employer/firstPayment">
+            <Link to="/firstPayment">
               <button
                 className="button-1"
                 onClick={addJob}

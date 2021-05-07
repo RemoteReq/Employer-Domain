@@ -5,7 +5,7 @@ const history = require('connect-history-api-fallback');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 8080;
+const PORT = 8082;
 
 // User history to intecept client requests and forward to React Router history
 app.use(history());

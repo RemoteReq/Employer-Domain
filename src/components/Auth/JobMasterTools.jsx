@@ -93,7 +93,7 @@ class JobMasterTools extends Component {
             assignmentSuccess: true,
             assignmentFail: false,
           }, () => {
-            window.location = '/employer/dashboard';
+            window.location = '/dashboard';
           });
         }
       })

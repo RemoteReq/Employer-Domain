@@ -52,7 +52,7 @@ class IsHiredPoster extends Component {
             <div>
               <Redirect
                 to={{
-                  pathname: '/employer/secondPayment',
+                  pathname: '/secondPayment',
                   state: {
                     jobId: this.props.jobId,
                   },
@@ -66,7 +66,7 @@ class IsHiredPoster extends Component {
         <div>
           <Redirect
             to={{
-              pathname: '/employer/dashboard',
+              pathname: '/dashboard',
             }}
             />
         </div>
@@ -83,7 +83,7 @@ class IsHiredPoster extends Component {
               <p className="small-paragraph">
                 If you&apos;re not redirected,&nbsp;
                 <Link to={{
-                  pathname: '/employer/dashboard',
+                  pathname: '/dashboard',
                 }}>
                   Click Here
                 </Link>
