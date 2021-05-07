@@ -12,7 +12,7 @@ module.exports = {
       repo: 'git@github.com:RemoteReq/Employer-Domain.git',
       path: '/home/ubuntu/employer',
       'pre-deploy-local': "echo 'beginning production deployment'",
-      'post-setup': 'npm version,',
+      'post-setup': 'npm --version,',
       'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart ecosystem.config.js --env production',
     },
     // staging: {
