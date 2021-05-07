@@ -156,7 +156,7 @@ class ESignIn extends Component {
           </button>
 
           <p className="small-paragraph">
-            Are you a job seeker? <Link to="/sign-in">Sign In Here</Link>
+            Are you a job seeker? <a href="https://remotereq.com/sign-in">Sign In Here</a>
           </p>
 
           <p className="small-paragraph">
