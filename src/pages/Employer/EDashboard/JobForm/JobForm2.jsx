@@ -127,7 +127,7 @@ class JobForm2 extends Component {
           job: {
             ...this.state.job,
             ...rest,
-            keySkills: JSON.parse(keySkills),
+            keySkills: keySkills ? JSON.parse(keySkills) : [],
             jobType,
             availability,
             companyName: response.data.companyName,
@@ -323,14 +323,14 @@ class JobForm2 extends Component {
       .then((response) => {
         console.log(response);
 
-        window.location = '/employer/dashboard';
+        window.location = '/dashboard';
 
         return response.status;
       })
       .then(() => {
         console.log('taking you to dashboard');
 
-        window.location = '/employer/dashboard';
+        window.location = '/dashboard';
       })
       .catch((error) => {
         console.log(error);

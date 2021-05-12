@@ -133,7 +133,7 @@ class GigSelect extends Component {
 
             <Link
               to={{
-                pathname: '/employer/job-form-2',
+                pathname: '/job-form-2',
                 state: {
                   // edit,
                   availability,

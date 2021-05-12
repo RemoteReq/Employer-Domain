@@ -101,7 +101,7 @@ class FirstPayment extends Component {
             console.log('after purchase', result);
             // then on success, redirect Employer to JobForm
             if (result.status) {
-              this.props.history.push('/employer/dashboard');
+              this.props.history.push('/dashboard');
             }
           })
           .catch((error) => {

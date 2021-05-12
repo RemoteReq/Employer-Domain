@@ -85,7 +85,7 @@ class JobViewer extends Component {
         .then((response) => {
           console.log(response);
 
-          window.location = '/employer/dashboard';
+          window.location = '/dashboard';
         })
         .catch((error) => {
           console.error(error);
@@ -226,7 +226,7 @@ class JobViewer extends Component {
           <br/>
           <div className="select-list">
             <div className="item-list">
-              {
+              {/* {
                 typeof job.keySkills[0] === 'string'
                   ? JSON.parse(job.keySkills[0]).map((skill, i) => {
                     return (
@@ -241,7 +241,7 @@ class JobViewer extends Component {
                   })
 
                   : ''
-              }
+              } */}
             </div>
           </div>
 
@@ -254,7 +254,7 @@ class JobViewer extends Component {
             <div>
               <Link
                 to={{
-                  pathname: '/employer/gig-select-2',
+                  pathname: '/gig-select-2',
                   state: { job, edit: true },
                 }}
                 ><button className="small-button button-1">

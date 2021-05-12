@@ -98,7 +98,7 @@ class ForgotPassword extends Component {
           >Request Password Reset</button>
 
           <p className="small-paragraph">
-            Are you an Employer? <Link to="/employer/forgot-password">Recover your password here</Link>
+            Are you an Employer? <Link to="/forgot-password">Recover your password here</Link>
           </p>
 
         </form>

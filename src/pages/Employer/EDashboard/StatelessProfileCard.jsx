@@ -48,7 +48,7 @@ const StatelessProfileCard = ({ userDetails }) => {
             </div>
           </div>
 
-          <Link to="/employer/settings/profile">
+          <Link to="/settings/profile">
             <img src={SettingsIcon} className="settings-icon"/>
           </Link>
         </div>

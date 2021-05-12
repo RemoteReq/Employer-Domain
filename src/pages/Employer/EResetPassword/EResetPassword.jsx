@@ -116,7 +116,7 @@ class ResetPassword extends Component {
           >{statusMessage}</p>
 
           <p className={`small-paragraph ${returnToSignIn ? 'show' : 'hide'}`}>
-              Return to Sign In <Link to="/employer/sign-in">Here</Link>
+              Return to Sign In <Link to="/sign-in">Here</Link>
           </p>
 
           <button

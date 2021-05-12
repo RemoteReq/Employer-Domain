@@ -114,7 +114,7 @@ class SecondPayment extends Component {
           .then((result) => {
             console.log('after purchase', result);
             if (result.status) {
-              this.props.history.push('/employer/dashboard');
+              this.props.history.push('/dashboard');
             }
           })
           .catch((error) => {

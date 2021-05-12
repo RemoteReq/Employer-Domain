@@ -43,7 +43,7 @@ class VerifyPoster extends Component {
 
       verifyStatus
         ? <div>
-        <Redirect to="/employer/sign-in" />
+        <Redirect to="/sign-in" />
       </div>
         : <div className="verify-page">
       <div className="notice">
@@ -54,7 +54,7 @@ class VerifyPoster extends Component {
         <div>
           <p className="small-paragraph">
             If you&apos;re not redirected,&nbsp;
-            <Link to="/employer/sign-in">
+            <Link to="/sign-in">
               Click Here
             </Link>
           </p>

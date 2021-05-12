@@ -37,10 +37,10 @@ class Navigation1 extends Component {
       <nav
       id="navigation-1"
       className='navigation-1'>
-        <Link to="/" target="_self">
+        <a href="https://remotereq.com" target="_self">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <img src={ RRLogo } className='rr-logo' alt=""/>
-        </Link>
+        </a>
 
         <div
           className="hamburger-menu-icon"
@@ -51,18 +51,17 @@ class Navigation1 extends Component {
         </div>
 
         <div className="navigation-1-links">
-          <Link to="/find-talent">
-            <button className='button-2'>hire talent</button>
-          </Link>
+         <a href='https://remotereq.com/find-talent'>
+            <button className='button-1'>hire talent</button>
+          </a>
 
-          <Link to='/sign-in'>
-            <button className='button-2'>find jobs</button>
-          </Link>
+          <a href='https://remotereq.com/sign-in'>
+            <button className='button-1'>find jobs</button>
+          </a>
 
-
-          <Link to="/request-a-demo">
-            <button className='button-1'>request a demo</button>
-          </Link>
+          <a href='https://remotereq.com/request-a-demo'>
+            <button className='button-2'>request a demo</button>
+          </a>
 
           <a href="https://blog.remotereq.com">
             <button className="e-button-2">Blog</button>
@@ -70,17 +69,17 @@ class Navigation1 extends Component {
         </div>
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
-          <Link to="/find-talent">
-            <button className='button-2'>hire talent</button>
-          </Link>
+          <a href='https://remotereq.com/find-talent'>
+            <button className='button-1'>hire talent</button>
+          </a>
 
-          <Link to='/sign-in'>
-            <button className='button-2'>find jobs</button>
-          </Link>
+          <a href='https://remotereq.com/sign-in'>
+            <button className='button-1'>find jobs</button>
+          </a>
 
-          <Link to="/request-a-demo">
-            <button className='button-1'>request a demo</button>
-          </Link>
+          <a href='https://remotereq.com/request-a-demo'>
+            <button className='button-2'>request a demo</button>
+          </a>
         </div>
 
     </nav>

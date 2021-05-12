@@ -54,7 +54,7 @@ class VerifyPoster extends Component {
         <div>
           <p className="small-paragraph">
             If you&apos;re not redirected,&nbsp;
-            <Link to="/sig-in">
+            <Link to="/sign-in">
               Click Here
             </Link>
           </p>

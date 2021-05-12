@@ -41,7 +41,7 @@ class ENav extends Component {
     e.preventDefault();
 
     Eauth.logout(() => {
-      this.props.history.push('/employer/sign-in');
+      this.props.history.push('/sign-in');
     });
   }
 
@@ -66,7 +66,7 @@ class ENav extends Component {
 
     return (
       <nav className={`dashboard-navBar ${IN_DEV_MODE ? 'dev-mode-nav2' : ''}`}>
-        <Link to="/employer/dashboard" className="dashboard-home">
+        <Link to="/dashboard" className="dashboard-home">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <p>Dashboard</p>
         </Link>
@@ -78,7 +78,7 @@ class ENav extends Component {
         </div>
 
         <div className={`dashboard-hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'} ${IN_DEV_MODE ? 'dev-mode-nav3' : ''}`}>
-          <Link to="/employer/settings/profile">
+          <Link to="/settings/profile">
             <button className='button-1'>Settings</button>
           </Link>
 

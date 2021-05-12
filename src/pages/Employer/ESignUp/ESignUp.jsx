@@ -196,7 +196,7 @@ class ESignUp extends Component {
         </button>
 
         <p className="small-paragraph">
-          Already have an account? <Link className="small-link" to={'/employer/sign-in'}>Sign In</Link>
+          Already have an account? <Link className="small-link" to={'/sign-in'}>Sign In</Link>
         </p>
       </form>
     </div>

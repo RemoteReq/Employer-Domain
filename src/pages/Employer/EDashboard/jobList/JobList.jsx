@@ -27,7 +27,7 @@ const MappedReqs = ({ jobReqs }) => {
       <div className="job-list-header">
         <h3>Your Jobs</h3>
 
-        <Link to="/employer/gig-select-2">
+        <Link to="/gig-select-2">
           <button className="button-1 small-button">
             Post a job
           </button>
@@ -63,7 +63,7 @@ const EReminder = () => {
     <div className="job-list-header">
       <h3>Your Jobs</h3>
 
-      <Link to="/employer/gig-select-2">
+      <Link to="/gig-select-2">
         <button className="button-1 small-button">
           Post a job
         </button>

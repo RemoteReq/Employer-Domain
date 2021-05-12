@@ -97,7 +97,7 @@ class ForgotPassword extends Component {
           >Request Password Reset</button>
 
           <p className="small-paragraph">
-            Are you a Job Seeker? <Link to="/forgot-password">Recover your password here</Link>
+            Are you a Job Seeker? <a href="https://remotereq.com/forgot-password">Recover your password here</a>
           </p>
 
         </form>

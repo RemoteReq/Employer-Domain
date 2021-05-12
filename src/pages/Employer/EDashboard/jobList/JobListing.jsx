@@ -11,7 +11,7 @@ const JobListing = ({ job }) => {
   <div className="employer-job-listing">
     <Link
       to={{
-        pathname: `/employer/jobs/${job._id}`,
+        pathname: `/jobs/${job._id}`,
         state: {
           job,
         },

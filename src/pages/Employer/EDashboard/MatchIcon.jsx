@@ -7,7 +7,7 @@ const MatchIcon = ({ candidate }) => {
   return (
     <Link
       to={{
-        pathname: `/employer/match/${candidate._id}`,
+        pathname: `/match/${candidate._id}`,
         state: {
           candidate,
         },

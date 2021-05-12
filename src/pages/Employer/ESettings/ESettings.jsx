@@ -197,7 +197,7 @@ class ESettings extends Component {
               <div className="settings-selection">
                 <Switch>
                   <Route
-                    path="/employer/settings/profile"
+                    path="/settings/profile"
                     render={(props) => {
                       return (
                       <ProfileEditor
@@ -211,7 +211,7 @@ class ESettings extends Component {
                       );
                     }}
                   />
-                  <Route path="/employer/settings/account"
+                  <Route path="/settings/account"
                   render={(props) => {
                     return (
                       <AccountEditor
@@ -226,7 +226,7 @@ class ESettings extends Component {
                   }
 
                   }/>
-                  <Route path="/employer/settings/jobReqNotifications" component={JobReqNotifications} userDetails={userDetails}/>
+                  <Route path="/settings/jobReqNotifications" component={JobReqNotifications} userDetails={userDetails}/>
                 </Switch>
               </div>
             </div>
