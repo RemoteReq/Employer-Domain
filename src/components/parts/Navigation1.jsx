@@ -51,7 +51,7 @@ class Navigation1 extends Component {
         </div>
 
         <div className="navigation-1-links">
-         <a href='https://remotereq.com/hire-talent'>
+         <a href='https://remotereq.com/find-talent'>
             <button className='button-1'>hire talent</button>
           </a>
 

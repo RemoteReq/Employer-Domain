@@ -22,6 +22,7 @@ import GigSelect from '../pages/Employer/EDashboard/PaymentGateway/GigSelect.jsx
 import JobViewer from '../pages/Employer/EDashboard/JobViewer/JobViewer.jsx';
 import MatchViewer from '../pages/Employer/EDashboard/MatchViewer/MatchViewer.jsx';
 import EForgotPassword from '../pages/Employer/EForgotPassword/EForgotPassword.jsx';
+import ResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx';
 import JobForm2 from '../pages/Employer/EDashboard/JobForm/JobForm2.jsx';
 import GigSelect2 from '../pages/Employer/EDashboard/JobForm/GigSelect2.jsx';
 
@@ -36,8 +37,7 @@ import GigSelect2 from '../pages/Employer/EDashboard/JobForm/GigSelect2.jsx';
 // import PrivacyPolicy from '../pages/PrivacyPolicy.jsx';
 // import TermsOfUse from '../pages/TermsOfUse.jsx';
 import DevBanner from './parts/DevBanner.jsx';
-// import EResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx';
-// import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
+import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 // import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 // import RequestADemo from '../pages/RequestADemo.jsx';
 // import FAQ from '../pages/FAQ.jsx';
@@ -68,7 +68,9 @@ class App extends Component {
                 <Route path="/firstPayment" component={FirstPayment} />
                 <Route path="/secondPayment" component={SecondPayment} />
                 <Route path="/jobs/" component={JobViewer}/>
+                <Route path="/isHired" component={IsHired} />
                 <Route path="/match/" component={MatchViewer} />
+                <Route path="/resetPassword" component={ResetPassword} />
                 <Route path="/forgot-password" component={EForgotPassword} />
               </Switch>
             <Footer/>
