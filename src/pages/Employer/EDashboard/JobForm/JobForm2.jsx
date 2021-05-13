@@ -127,7 +127,7 @@ class JobForm2 extends Component {
           job: {
             ...this.state.job,
             ...rest,
-            keySkills: keySkills ? JSON.parse(keySkills) : [],
+            keySkills: keySkills ? JSON.parse(`[${keySkills[0]}]`) : [],
             jobType,
             availability,
             companyName: response.data.companyName,
