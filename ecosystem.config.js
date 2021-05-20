@@ -23,7 +23,6 @@ module.exports = {
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/employer',
       'pre-deploy-local': "echo 'beginning staging deployment'",
-      'post-setup': 'npm version,',
       'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart ecosystem.config.js --env staging',
     },
   },
