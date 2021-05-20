@@ -20,7 +20,7 @@ module.exports = {
       user: 'ubuntu',
       host: '3.143.222.9',
       ref: 'origin/staging',
-      repo: 'git@github.com:RemoteReq/Frontend.git',
+      repo: 'git@github.com:RemoteReq/Employer-Domain.git',
       path: '/home/ubuntu/employer',
       'pre-deploy-local': "echo 'beginning staging deployment'",
       'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart ecosystem.config.js --env staging',
