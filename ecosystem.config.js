@@ -18,7 +18,7 @@ module.exports = {
     staging: {
       key: '/home/ryden/.ssh/Heavy-Storm.pem',
       user: 'ubuntu',
-      host: '3.140.72.72',
+      host: '3.143.222.9',
       ref: 'origin/staging',
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/employer',
