@@ -108,7 +108,7 @@ class FirstPayment extends Component {
         if (discount.discountType === 'flat') {
           this.setState({
             ...this.state,
-            accessFee: this.state.accessFee - discount.amount,
+            accessFee: this.state.accessFee - discount.amount < 0 ? 0 : this.state.accessFee - discount.amount,
             lockPromo: true,
           });
         }
@@ -116,7 +116,8 @@ class FirstPayment extends Component {
         if (discount.discountType === 'percentage') {
           this.setState({
             ...this.state,
-            accessFee: this.state.accessFee * (discount.amount / 100),
+            accessFee: this.state.accessFee - (this.state.accessFee * (discount.amount / 100)),
+            hireFee: this.state.hireFee - (this.state.hireFee * (discount.amount / 100)),
             lockPromo: true,
           });
         }
