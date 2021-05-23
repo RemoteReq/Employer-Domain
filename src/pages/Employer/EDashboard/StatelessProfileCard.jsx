@@ -40,7 +40,7 @@ const StatelessProfileCard = ({ userDetails }) => {
 
               <IconAndTitle title="Website" icon={URLIcon}/>
               <p className="small-paragraph">
-                <a href={`http://${userDetails.companyWebsite}`}>
+                <a href={`${userDetails.companyWebsite}`}>
                   {userDetails.companyWebsite || ''}
                 </a>
               </p>
