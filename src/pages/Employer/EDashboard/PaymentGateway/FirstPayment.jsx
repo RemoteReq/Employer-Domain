@@ -94,7 +94,7 @@ class FirstPayment extends Component {
     this.enablePreloader();
 
     axios({
-      url: 'http://localhost:3030/api/admin/checkCoupon',
+      url: 'https://dev.remotereq.com/api/admin/checkCoupon',
       method: 'POST',
       data: {
         code: this.state.code,
