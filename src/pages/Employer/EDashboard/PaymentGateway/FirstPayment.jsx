@@ -106,20 +106,39 @@ class FirstPayment extends Component {
         const discount = response.data;
 
         if (discount.discountType === 'flat') {
-          this.setState({
-            ...this.state,
-            accessFee: this.state.accessFee - discount.amount < 0 ? 0 : this.state.accessFee - discount.amount,
-            lockPromo: true,
-          });
+          if (discount.appliesToAccessFee) {
+            this.setState({
+              ...this.state,
+              accessFee: this.state.accessFee - discount.amount < 0 ? 0 : this.state.accessFee - discount.amount,
+              lockPromo: true,
+            });
+          }
+
+          if (discount.appliesToHireFee) {
+            this.setState({
+              ...this.state,
+              hireFee: this.state.hireFee - discount.amount < 0 ? 0 : this.state.hireFee - discount.amount,
+              lockPromo: true,
+            });
+          }
         }
 
         if (discount.discountType === 'percentage') {
-          this.setState({
-            ...this.state,
-            accessFee: this.state.accessFee - (this.state.accessFee * (discount.amount / 100)),
-            hireFee: this.state.hireFee - (this.state.hireFee * (discount.amount / 100)),
-            lockPromo: true,
-          });
+          if (discount.appliesToAccessFee) {
+            this.setState({
+              ...this.state,
+              accessFee: this.state.accessFee - (this.state.accessFee * (discount.amount / 100)),
+              lockPromo: true,
+            });
+          }
+
+          if (discount.appliesToHireFee) {
+            this.setState({
+              ...this.state,
+              hireFee: this.state.hireFee - (this.state.hireFee * (discount.amount / 100)),
+              lockPromo: true,
+            });
+          }
         }
       });
   }
