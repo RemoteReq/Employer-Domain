@@ -16,10 +16,13 @@ class FirstPayment extends Component {
     this.state = {
       jobReqPurchased: false,
       requestInProgress: false,
+      lockPromo: false,
     };
 
     this.purchase = this.purchase.bind(this);
     this.enablePreloader = this.enablePreloader.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.applyPromoCode = this.applyPromoCode.bind(this);
   }
 
   componentDidMount() {
@@ -64,6 +67,15 @@ class FirstPayment extends Component {
       });
   }
 
+  handleChange(e) {
+    e.preventDefault();
+
+    this.setState({
+      ...this.state,
+      [e.target.name]: e.target.value,
+    });
+  }
+
   enablePreloader() {
     this.setState({
       requestInProgress: true,
@@ -74,6 +86,42 @@ class FirstPayment extends Component {
         });
       }, 2000);
     });
+  }
+
+  applyPromoCode(e) {
+    e.preventDefault();
+
+    this.enablePreloader();
+
+    axios({
+      url: 'http://localhost:3030/api/admin/checkCoupon',
+      method: 'POST',
+      data: {
+        code: this.state.code,
+      },
+    })
+      .then((response) => {
+        console.log(response);
+
+        const discount = response.data;
+
+        if (discount.discountType === 'flat') {
+          this.setState({
+            ...this.state,
+            accessFee: this.state.accessFee - discount.amount < 0 ? 0 : this.state.accessFee - discount.amount,
+            lockPromo: true,
+          });
+        }
+
+        if (discount.discountType === 'percentage') {
+          this.setState({
+            ...this.state,
+            accessFee: this.state.accessFee - (this.state.accessFee * (discount.amount / 100)),
+            hireFee: this.state.hireFee - (this.state.hireFee * (discount.amount / 100)),
+            lockPromo: true,
+          });
+        }
+      });
   }
 
   purchase(e) {
@@ -119,6 +167,7 @@ class FirstPayment extends Component {
 
     const { clientToken, accessFee, hireFee } = this.state;
     const { requestInProgress } = this.state;
+    const { lockPromo } = this.state;
 
     return (
 
@@ -155,6 +204,22 @@ class FirstPayment extends Component {
                     }}
                     onInstance={(instance) => { return this.instance = instance; } }
                     />
+
+                  <div className="promo-code">
+                    <p>Promo Code</p>
+
+                    <div className="promo-code-field">
+                      <input
+                        readOnly={lockPromo}
+                        name="code"
+                        onChange={this.handleChange}
+                      />
+                      <button
+                        disabled={lockPromo}
+                        onClick={this.applyPromoCode}
+                      >Apply</button>
+                    </div>
+                  </div>
 
                   <div className="form-handler">
                     <button

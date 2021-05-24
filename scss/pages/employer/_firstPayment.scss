@@ -10,6 +10,23 @@
     background-color: white;
   }
 
+  .promo-code {
+    
+    .promo-code-field {
+      display: flex;
+      align-items: center;
+
+      input {
+        margin: 0;
+      }
+
+      button {
+        height: 54px;
+        margin: 0;
+      }
+    }
+  }
+
   .form-handler {
     margin: 40px 0;
     display: flex;
