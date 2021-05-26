@@ -69,6 +69,7 @@ const jobTitles = [
   { value: 'School Assistant Director', label: 'School Assistant Director' },
   { value: 'School Director', label: 'School Director' },
   { value: 'Sales Manager', label: 'Sales Manager' },
+  { value: 'Sales Representative', label: 'Sales Representative' },
   { value: 'Account Executive', label: 'Account Executive' },
   { value: 'School Director', label: 'School Director' },
   { value: 'Social Media Coordinator', label: 'Social Media Coordinator' },

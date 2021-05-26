@@ -27,6 +27,9 @@ const causes = [
   { value: 'Water and Sanitation', label: 'Water and Sanitation' },
   { value: 'Women’s Rights ', label: 'Women’s Rights ' },
   { value: 'Youth Development', label: 'Youth Development' },
+  { value: 'Minority-led Businesses', label: 'Minority-led Businesses' },
+  { value: 'Woman-led Businesses', label: 'Woman-led Businesses' },
+  { value: 'Diversity, Equity, and Inclusion Hiring', label: 'Diversity, Equity, and Inclusion Hiring' },
 ];
 
 module.exports = causes;
