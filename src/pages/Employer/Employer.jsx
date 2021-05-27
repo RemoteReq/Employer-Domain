@@ -14,6 +14,7 @@ import GigSelect from './EDashboard/PaymentGateway/GigSelect.jsx';
 import JobViewer from './EDashboard/JobViewer/JobViewer.jsx';
 import MatchViewer from './EDashboard/MatchViewer/MatchViewer.jsx';
 import EForgotPassword from './EForgotPassword/EForgotPassword.jsx';
+import EResetPassword from './EResetPassword/EResetPassword.jsx';
 import JobForm2 from './EDashboard/JobForm/JobForm2.jsx';
 import GigSelct2 from './EDashboard/JobForm/GigSelect2.jsx';
 
@@ -41,6 +42,7 @@ const Employer = () => {
         <Route path={`${path}/jobs/`} component={JobViewer}/>
         <Route path={`${path}/match/`} component={MatchViewer} />
         <Route path={`${path}/forgot-password`} component={EForgotPassword} />
+        <Route path={`${path}/employerResetPassword`} component={EResetPassword} />
       </Switch>
     </div>
   );
