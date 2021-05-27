@@ -9,6 +9,7 @@ const ResetPasswordQuery = () => {
 };
 
 const ResetPasswordWrapper = () => {
+  console.log('component mounted!');
   const query = ResetPasswordQuery();
 
   return (
