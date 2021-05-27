@@ -38,7 +38,7 @@ import GigSelect2 from '../pages/Employer/EDashboard/JobForm/GigSelect2.jsx';
 // import TermsOfUse from '../pages/TermsOfUse.jsx';
 import DevBanner from './parts/DevBanner.jsx';
 import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
-// import ThankYou from '../pages/ThankYou/ThankYou.jsx';
+import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 // import RequestADemo from '../pages/RequestADemo.jsx';
 // import FAQ from '../pages/FAQ.jsx';
 
@@ -72,6 +72,7 @@ class App extends Component {
                 <Route path="/match/" component={MatchViewer} />
                 <Route path="/resetPassword" component={ResetPassword} />
                 <Route path="/forgot-password" component={EForgotPassword} />
+                <Route path="/afterSignUp" component={ThankYou} />
               </Switch>
             <Footer/>
           </div>
@@ -93,7 +94,6 @@ export default App;
 <Route path="/privacy-policy" component={PrivacyPolicy} />
 <Route path="/terms-of-Use" component={TermsOfUse} />
 <Route path="/isHired" component={IsHired} />
-<Route path="/afterSignUp" component={ThankYou} />
 <Route path="/employerResetPassword" component={EResetPassword} />
 <Route path="/faq" component={FAQ} />
 <ProtectedRoute path="/settings" component={Settings} />
