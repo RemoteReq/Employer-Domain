@@ -140,7 +140,7 @@ class JobForm2 extends Component {
         }, () => { console.log(this.state); });
       });
 
-    Axios.get('http://localhost:3030/api/admin/causes')
+    Axios.get(`${backend}/api/admin/causes`)
       .then((response) => {
         console.log(response);
 
