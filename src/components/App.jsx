@@ -70,7 +70,7 @@ class App extends Component {
                 <Route path="/jobs/" component={JobViewer}/>
                 <Route path="/isHired" component={IsHired} />
                 <Route path="/match/" component={MatchViewer} />
-                <Route path="/resetPassword" component={ResetPassword} />
+                <Route path="/employerResetPassword" component={ResetPassword} />
                 <Route path="/forgot-password" component={EForgotPassword} />
                 <Route path="/afterSignUp" component={ThankYou} />
               </Switch>

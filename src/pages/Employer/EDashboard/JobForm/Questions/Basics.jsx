@@ -1,10 +1,10 @@
 import React from 'react';
 import Select from 'react-select';
 import jobTitles from '#assets/inputs/new/new-job-titles.js';
-import causes from '#assets/inputs/new/new-causes.js';
+// import causes from '#assets/inputs/new/new-causes.js';
 
 const Basics = ({
-  job, goNext, handleChange, handleSelect,
+  job, goNext, handleChange, handleSelect, causes,
 }) => {
   console.log(job);
 
@@ -35,7 +35,7 @@ const Basics = ({
         <p>What cause does your company work on?</p>
         <Select
           name="cause"
-          value={causes.filter((cause) => { return cause.value === job.cause; })}
+          // value={causes.filter((cause) => { return cause.value === job.cause; })}
           onChange={handleSelect}
           options={causes}
           />

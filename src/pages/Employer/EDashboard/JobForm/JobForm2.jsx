@@ -29,13 +29,14 @@ const CompanyWindow = ({ job }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleMoney, handleFile, addJob, removeFromList, edit,
+  causes, pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleMoney, handleFile, addJob, removeFromList, edit,
 }) => {
   switch (pageNumber) {
     case 1:
       return (
         <Basics
           job={job}
+          causes={causes}
           handleChange={handleChange}
           handleSelect={handleSelect}
           handleFile={handleFile}
@@ -137,6 +138,18 @@ class JobForm2 extends Component {
           },
           edit,
         }, () => { console.log(this.state); });
+      });
+
+    Axios.get('http://localhost:3030/api/admin/causes')
+      .then((response) => {
+        console.log(response);
+
+        this.setState({
+          ...this.state,
+          causes: response.data,
+        }, () => {
+          console.log(this.state);
+        });
       });
   }
 
@@ -378,6 +391,8 @@ class JobForm2 extends Component {
       // companyWebsite, companyLogo, companyName, jobType, availability,
     } = this.state;
 
+    const { causes } = this.state || [''];
+
     return (
       <div className="job-form-2-page">
         <ENav/>
@@ -408,6 +423,7 @@ class JobForm2 extends Component {
               goNext={this.goNext}
               goPrev={this.goPrev}
               addJob={this.addJob}
+              causes={causes}
               />
           </div>
         </div>
