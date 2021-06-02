@@ -140,7 +140,8 @@ class JobForm2 extends Component {
         }, () => { console.log(this.state); });
       });
 
-    Axios.get(`${backend}/api/admin/causes`)
+    // get causes
+    Axios.get('https://dev.remotereq.com/api/admin/causes')
       .then((response) => {
         console.log(response);
 
