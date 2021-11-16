@@ -141,17 +141,17 @@ class JobForm2 extends Component {
       });
 
     // get causes
-    Axios.get('https://dev.remotereq.com/api/admin/causes')
-      .then((response) => {
-        console.log(response);
+    // Axios.get('https://dev.remotereq.com/api/admin/causes')
+    //   .then((response) => {
+    //     console.log(response);
 
-        this.setState({
-          ...this.state,
-          causes: response.data,
-        }, () => {
-          console.log(this.state);
-        });
-      });
+    //     this.setState({
+    //       ...this.state,
+    //       causes: response.data,
+    //     }, () => {
+    //       console.log(this.state);
+    //     });
+    //   });
   }
 
   handleChange(e) {

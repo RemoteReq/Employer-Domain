@@ -159,7 +159,7 @@ class FirstPayment extends Component {
             token: localStorage.getItem('e-session'),
           },
           data: {
-            amount: this.state.price,
+            amount: this.state.accessFee,
             paymentMethodNonce: response.nonce,
             jobId: this.state.jobId,
           },

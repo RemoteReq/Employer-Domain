@@ -226,22 +226,19 @@ class JobViewer extends Component {
           <br/>
           <div className="select-list">
             <div className="item-list">
-              {/* {
-                typeof job.keySkills[0] === 'string'
-                  ? JSON.parse(job.keySkills[0]).map((skill, i) => {
-                    return (
-                      <button
-                        key={i}
-                        disabled
-                        className="list-item"
-                      >
-                        {skill}
-                      </button>
-                    );
-                  })
-
-                  : ''
-              } */}
+              {
+                job.keySkills.map((skill, i) => {
+                  return (
+                    <button
+                      key={i}
+                      disabled
+                      className="list-item"
+                    >
+                      {skill}
+                    </button>
+                  );
+                })
+              }
             </div>
           </div>
 
