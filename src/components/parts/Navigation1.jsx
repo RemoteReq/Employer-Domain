@@ -37,7 +37,7 @@ class Navigation1 extends Component {
       <nav
       id="navigation-1"
       className='navigation-1'>
-        <a href="https://remotereq.com" target="_self">
+        <a href="https://staging.remotereq.com" target="_self">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <img src={ RRLogo } className='rr-logo' alt=""/>
         </a>
@@ -51,15 +51,15 @@ class Navigation1 extends Component {
         </div>
 
         <div className="navigation-1-links">
-         <a href='https://remotereq.com/find-talent'>
+         <a href='https://demo.remotereq.com/sign-in'>
             <button className='button-1'>hire talent</button>
           </a>
 
-          <a href='https://remotereq.com/sign-in'>
+          <a href='https://staging.remotereq.com/sign-in'>
             <button className='button-1'>find jobs</button>
           </a>
 
-          <a href='https://remotereq.com/request-a-demo'>
+          <a href='https://staging.remotereq.com/request-a-demo'>
             <button className='button-2'>request a demo</button>
           </a>
 
@@ -69,15 +69,15 @@ class Navigation1 extends Component {
         </div>
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
-          <a href='https://remotereq.com/find-talent'>
+          <a href='https://demo.remotereq.com/sign-in'>
             <button className='button-1'>hire talent</button>
           </a>
 
-          <a href='https://remotereq.com/sign-in'>
+          <a href='https://staging.remotereq.com/sign-in'>
             <button className='button-1'>find jobs</button>
           </a>
 
-          <a href='https://remotereq.com/request-a-demo'>
+          <a href='https://staging.remotereq.com/request-a-demo'>
             <button className='button-2'>request a demo</button>
           </a>
         </div>
