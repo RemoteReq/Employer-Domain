@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
 import EAuth from '../../EAuth/EAuth.jsx';
@@ -29,7 +30,7 @@ const CompanyWindow = ({ job }) => {
 };
 
 const QSwitch = ({
-  causes, pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleMoney, handleFile, addJob, removeFromList, edit,
+  causes, pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleMoney, handleFile, addJob, removeFromList, edit, preloaderState,
 }) => {
   switch (pageNumber) {
     case 1:
@@ -75,6 +76,7 @@ const QSwitch = ({
           handleSelect={handleSelect}
           goPrev={goPrev}
           edit={edit}
+          preloaderState={preloaderState}
           addJob={addJob}
         />
       );
@@ -93,9 +95,11 @@ class JobForm2 extends Component {
       job: {
         keySkills: [],
       },
+      preloaderState: false,
       currentPage: 1,
       progress: 1,
       edit: false,
+      redirect: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -104,6 +108,7 @@ class JobForm2 extends Component {
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
     this.addJob = this.addJob.bind(this);
     this.setPage = this.setPage.bind(this);
     this.goNext = this.goNext.bind(this);
@@ -236,12 +241,64 @@ class JobForm2 extends Component {
     }, () => { return console.log(this.state); });
   }
 
+  enablePreloader() {
+    this.setState({
+      preloaderState: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          preloaderState: false,
+        });
+      }, 2000);
+    });
+  }
+
   addJob(e) {
     e.preventDefault();
 
-    const addJobForm = new FormData();
 
     const { job, edit } = this.state;
+
+    // const jobForm = {
+    //   transactionIdForAddJob: this.props.location.state.transactionId || '',
+    //   companyLogopath: job.companyLogo,
+    //   companyName: job.companyName,
+    //   companyWebsiteUrl: job.companyWebsite,
+    //   jobDescription: job.jobDescription,
+    //   availability: job.availability,
+    //   aboutUs: job.aboutUs,
+    //   title: job.title,
+    //   cause: job.cause,
+    //   jobDetails: job.jobDetails,
+    //   soonestJoinDate: job.soonestJoinDate,
+    //   minExperience: job.minExperience,
+    //   requiredEducationLevel: job.requiredEducationLevel,
+    //   keySkills: job.keySkills,
+    //   timeZone: job.timeZone,
+    //   location: job.location,
+    //   zipcode: job.zipcode,
+    //   numberOfCandidate: 5,
+    //   percentageMatch: 50,
+    //   eligibleToWorkInUS: true,
+    //   fluentInEnglish: true,
+    // };
+
+    // if (job.jobType === 'Part Time') {
+    //   jobForm.jobType = job.jobType;
+    //   jobForm.salary = 0;
+    //   jobForm.hourlyWage = job.hourlyWage;
+    //   jobForm.numberOfHours = job.numberOfHours;
+    // }
+
+    // if (job.jobType === 'Full Time') {
+    //   jobForm.jobType = job.jobType;
+    //   jobForm.salary = job.salary;
+    //   jobForm.hourlyWage = 0;
+    // }
+
+    // FormData Section
+    const addJobForm = new FormData();
+
     // const workHours = `${job.availableHoursFrom}-${job.availableHoursTo}`;
 
     // addJobForm.append('transactionIdForAddJob', 'sample job for testing');
@@ -310,7 +367,6 @@ class JobForm2 extends Component {
       addJobForm.append('hourlyWage', job.hourlyWage);
       addJobForm.append('numberOfHours', job.numberOfHours);
     }
-
     if (job.jobType === 'Full Time') {
       addJobForm.append('jobType', job.jobType);
       addJobForm.append('salary', job.salary);
@@ -318,11 +374,11 @@ class JobForm2 extends Component {
     }
 
     // View values before sending
-    for (const pair of addJobForm.entries()) {
-      console.log(`${pair[0]}: ${pair[1]}`);
-    }
+    // for (const pair of addJobForm.entries()) {
+    //   console.log(`${pair[0]}: ${pair[1]}`);
+    // }
 
-    // this.enablePreloader();
+    this.enablePreloader();
 
     const destinatation = edit ? `${EAuth.backend}/api/jobs/editJob/${job._id}` : `${EAuth.backend}/api/jobs/add`;
 
@@ -337,14 +393,17 @@ class JobForm2 extends Component {
       .then((response) => {
         console.log(response);
 
-        window.location = '/dashboard';
+        this.setState({
+          redirect: true,
+        });
+        // window.location = '/dashboard';
 
         return response.status;
       })
       .then(() => {
         console.log('taking you to dashboard');
 
-        window.location = '/dashboard';
+        // window.location = '/dashboard';
       })
       .catch((error) => {
         console.log(error);
@@ -387,12 +446,18 @@ class JobForm2 extends Component {
   render() {
     const {
       currentPage, progress,
+      preloaderState,
       job,
       edit,
+      redirect,
       // companyWebsite, companyLogo, companyName, jobType, availability,
     } = this.state;
 
     const { causes } = this.state || [''];
+
+    if (redirect) {
+      return <Redirect to="/dashboard" />;
+    }
 
     return (
       <div className="job-form-2-page">
@@ -415,6 +480,7 @@ class JobForm2 extends Component {
               edit={edit}
               pageNumber={currentPage}
               progress={progress}
+              preloaderState={preloaderState}
               handleChange={this.handleChange}
               handleSelect={this.handleSelect}
               handleMoney={this.handleMoney}

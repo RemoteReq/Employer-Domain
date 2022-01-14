@@ -230,7 +230,7 @@ const PartTimeForm = ({
         <div className="form-handler">
           <div className="button-preloader">
             <div className={`form-preloader ${jobData.preloaderState ? 'show' : 'hide'}`}>
-              <Preloader color="white" />
+              <Preloader color="blue" />
             </div>
 
             <Link to="/firstPayment">

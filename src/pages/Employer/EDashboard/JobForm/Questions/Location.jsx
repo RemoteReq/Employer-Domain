@@ -2,9 +2,10 @@ import React from 'react';
 import Select from 'react-select';
 import locations from '#assets/inputs/new/new-locations.js';
 import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
+import Preloader from '#components/svgs/Preloader.jsx';
 
 const Location = ({
-  job, goPrev, handleChange, handleSelect, addJob,
+  job, goPrev, handleChange, handleSelect, addJob, preloaderState,
 }) => {
   return (
     <div className="job-form">
@@ -33,6 +34,10 @@ const Location = ({
           onChange={handleChange}
         />
       </div>
+
+      <div className={`form-preloader ${preloaderState ? 'show' : 'hide'}`}>
+          <Preloader color="blue" />
+        </div>
 
       <div className="job-form-nav-buttons">
         <button
